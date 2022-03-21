@@ -1,0 +1,45 @@
+<resources>
+    <style name="AdNative">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:text">Ad</item>
+        <item name="android:background">#FFCC66</item>
+        <item name="android:width">15dp</item>
+        <item name="android:height">15dp</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay.App.CornerSize50Percent" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay.App.SelectedCornerRadius" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="cornerSizeTopRight">30dp</item>
+        <item name="cornerSizeTopLeft">30dp</item>
+        <item name="cornerFamilyTopRight">rounded</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay.App.CornerSize10Percent" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="cornerSize">20%</item>
+    </style>
+
+    <style name="CardView.Riple" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:foreground">?android:attr/selectableItemBackground</item>
+        <item name="android:clickable">true</item>
+    </style>
+
+    <style name="BottomNavigationView" parent="@style/TextAppearance.AppCompat.Caption">
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="BottomNavigationView.Active" parent="@style/TextAppearance.AppCompat.Caption">
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="DialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/slide_up</item>
+        <item name="android:windowExitAnimation">@anim/slide_down</item>
+    </style>
+
+</resources>

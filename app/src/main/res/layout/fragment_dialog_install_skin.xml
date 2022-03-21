@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/adsNativeBig"
+            layout="@layout/item_ad_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            ads:layout_constraintEnd_toEndOf="parent"
+            ads:layout_constraintStart_toStartOf="parent"
+            ads:layout_constraintTop_toBottomOf="@+id/materialCardView" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/materialCardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="170dp"
+            ads:cardCornerRadius="16dp"
+            ads:cardElevation="8dp"
+            ads:layout_constraintBottom_toBottomOf="parent"
+            ads:layout_constraintEnd_toEndOf="parent"
+            ads:layout_constraintStart_toStartOf="parent"
+            ads:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="24dp"
+                android:paddingBottom="24dp"
+                android:background="@drawable/bg_splash">
+
+                <include
+                    android:id="@+id/adsNativeSmall"
+                    layout="@layout/item_ad_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    ads:layout_constraintTop_toTopOf="parent"/>
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/lootieDownload"
+                    android:layout_width="0dp"
+                    android:layout_height="200dp"
+                    android:layout_marginTop="8dp"
+                    ads:layout_constraintEnd_toEndOf="parent"
+                    ads:layout_constraintStart_toStartOf="parent"
+                    ads:layout_constraintTop_toBottomOf="@+id/adsNativeSmall" />
+
+                <TextView
+                    android:id="@+id/tvProgress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:textColor="@color/white"
+                    android:textSize="23sp"
+                    android:textStyle="bold"
+                    ads:layout_constraintBottom_toBottomOf="@+id/lootieDownload"
+                    ads:layout_constraintEnd_toEndOf="@+id/lootieDownload"
+                    ads:layout_constraintStart_toStartOf="@+id/lootieDownload"
+                    ads:layout_constraintTop_toTopOf="@+id/lootieDownload"
+                    tools:text="20%" />
+
+                <ProgressBar
+                    android:id="@+id/progressInstall"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:max="100"
+                    tools:progress="45"
+                    android:visibility="gone"
+                    android:progressDrawable="@drawable/bg_progress"
+                    ads:layout_constraintBottom_toBottomOf="@+id/lootieDownload"
+                    tools:layout_editor_absoluteX="24dp" />
+
+                <TextView
+                    android:id="@+id/tvSize"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:gravity="center"
+                    android:textSize="15sp"
+                    ads:layout_constraintEnd_toEndOf="parent"
+                    ads:layout_constraintStart_toStartOf="parent"
+                    ads:layout_constraintTop_toBottomOf="@+id/lootieDownload"
+                    tools:text="Ukuran File 5 Mb" />
+
+                <TextView
+                    android:id="@+id/tvDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_medium"
+                    android:gravity="center"
+                    android:textSize="13sp"
+                    ads:layout_constraintEnd_toEndOf="parent"
+                    ads:layout_constraintStart_toStartOf="parent"
+                    ads:layout_constraintTop_toBottomOf="@id/tvSize"
+                    tools:text="tunggu proses download selesai.." />
+
+                <LinearLayout
+                    android:id="@+id/linearLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2"
+                    ads:layout_constraintEnd_toEndOf="parent"
+                    ads:layout_constraintStart_toStartOf="parent"
+                    ads:layout_constraintTop_toBottomOf="@+id/tvDescription">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnCancel"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="32dp"
+                        android:layout_marginEnd="12dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_border_image"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="@string/cancel"
+                        android:textSize="12sp" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnInstall"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="32dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_btn"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="@string/install"
+                        android:textColor="@color/white"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

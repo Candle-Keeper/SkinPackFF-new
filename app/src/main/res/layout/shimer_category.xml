@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_marginTop="20dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/ivTankk"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:background="@android:color/darker_gray"
+        android:padding="5dp"
+        app:layout_constraintEnd_toStartOf="@+id/ivFighterr"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent"
+        app:strokeWidth="3dp" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/ivFighterr"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:padding="5dp"
+        app:layout_constraintEnd_toStartOf="@+id/ivAssasinn"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/ivTankk"
+        app:layout_constraintTop_toTopOf="@+id/ivTankk"
+        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent"
+        app:strokeWidth="3dp"
+        android:background="@android:color/darker_gray"/>
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/ivAssasinn"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:padding="5dp"
+        app:layout_constraintEnd_toStartOf="@+id/ivMage"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/ivFighterr"
+        app:layout_constraintTop_toTopOf="@+id/ivFighterr"
+        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent"
+        app:strokeWidth="3dp"
+        android:background="@android:color/darker_gray" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/ivMage"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:padding="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ivAssasinn"
+        app:layout_constraintTop_toTopOf="@+id/ivAssasinn"
+        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent"
+        app:strokeWidth="3dp"
+        android:background="@android:color/darker_gray" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

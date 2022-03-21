@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:shimmer="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_splash"
+    tools:context=".ui.home.HomeActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/mShimmerViewContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            shimmer:duration="800">
+
+            <!-- Adding 3 rows of placeholders -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="20dp"
+                android:orientation="vertical">
+
+                <include layout="@layout/shimer_carousel" />
+
+                <include layout="@layout/shimer_category" />
+
+                <include layout="@layout/shimer_list_hero" />
+
+                <include layout="@layout/shimer_list_hero" />
+
+                <include layout="@layout/shimer_list_skins" />
+
+                <include layout="@layout/shimer_list_skins" />
+
+            </LinearLayout>
+
+        </com.facebook.shimmer.ShimmerFrameLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/mainContent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="24dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="@string/welcome"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-5dp"
+                android:fontFamily="@font/poppins_regular"
+                android:text="@string/mobile_legends_skins_tools"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@+id/textView4"
+                app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+            <TextView
+                android:id="@+id/tvTest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:text="TEST"
+                android:padding="5dp"
+                android:textColor="@color/white"
+                android:textSize="11sp"
+                android:background="@android:color/holo_green_dark"
+                app:layout_constraintBottom_toBottomOf="@+id/llAds"
+                app:layout_constraintEnd_toStartOf="@+id/llAds"
+                app:layout_constraintTop_toTopOf="@+id/llAds" />
+
+            <LinearLayout
+                android:id="@+id/llAds"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="24dp"
+                android:background="@drawable/bg_circle_shadow"
+                android:gravity="center"
+                app:layout_constraintBottom_toBottomOf="@+id/textView2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textView4">
+
+                <TextView style="@style/AdNative" />
+
+            </LinearLayout>
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/rvCarousel"
+                android:layout_width="match_parent"
+                android:layout_height="290dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView2"
+                tools:background="@android:color/holo_blue_bright" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvCategory"
+                android:layout_width="match_parent"
+                android:layout_height="123dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                app:cardCornerRadius="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rvCarousel">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="8dp"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="2dp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="@string/pasang_skin_original"
+                        android:textSize="12sp" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvCategory"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="2dp"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal"
+                        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                        app:spanCount="1"
+                        tools:listitem="@layout/item_category" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvAddCategory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="5dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cvCategory"
+                tools:itemCount="2"
+                tools:listitem="@layout/item_add_category" />
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="0dp"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/blue"
+                app:layout_constraintEnd_toEndOf="@+id/rvAddCategory"
+                app:layout_constraintStart_toStartOf="@+id/rvAddCategory"
+                app:layout_constraintTop_toBottomOf="@+id/rvAddCategory" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="@string/skins_custom"
+                app:layout_constraintStart_toStartOf="@+id/cvCategory"
+                app:layout_constraintTop_toBottomOf="@+id/view" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvSkins"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView3"
+                app:spanCount="2"
+                tools:listitem="@layout/item_skins" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

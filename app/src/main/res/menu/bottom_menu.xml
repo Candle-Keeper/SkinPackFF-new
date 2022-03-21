@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menu_skins"
+        android:enabled="true"
+        android:icon="@drawable/ic_skins_selector"
+        android:title="Skins"
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/menu_more"
+        android:enabled="true"
+        android:icon="@drawable/ic_more_selector"
+        android:title="More"
+        app:showAsAction="always"/>
+</menu>

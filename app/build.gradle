@@ -1,0 +1,72 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-parcelize'
+    id 'com.google.gms.google-services'
+    id 'com.google.firebase.crashlytics'
+}
+
+apply from: '../shared_dependencies.gradle'
+
+android {
+    compileSdk 31
+
+    defaultConfig {
+        applicationId "id.candlekeeper.skinpackml"
+        minSdk 21
+        targetSdk 31
+        versionCode 39
+        versionName "1.4.2"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        signingConfig signingConfigs.debug
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    viewBinding {
+        enabled = true
+    }
+
+    dynamicFeatures = [':more']
+}
+
+dependencies {
+    implementation project(":core")
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    //rx java
+//    implementation 'io.reactivex.rxjava2:rxjava:2.2.19'
+    implementation "io.reactivex.rxjava2:rxandroid:2.1.1"
+
+    //kenburnsview
+    implementation "com.flaviofaria:kenburnsview:1.0.7"
+
+    //fix crash on Android 12 API 31
+    implementation 'androidx.work:work-runtime-ktx:2.7.1'
+
+    // WebView
+    implementation "androidx.browser:browser:1.4.0"
+
+    //move with SAF
+    implementation "com.anggrayudi:storage:1.1.0"
+
+    //permission
+    implementation 'pub.devrel:easypermissions:3.0.0'
+}

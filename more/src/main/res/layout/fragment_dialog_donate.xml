@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:ads="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginHorizontal="10dp"
+    android:layout_marginVertical="50dp"
+    ads:cardCornerRadius="16dp"
+    ads:cardElevation="8dp"
+    ads:contentPadding="16dp"
+    android:layout_gravity="center"
+    ads:layout_constraintBottom_toBottomOf="parent"
+    ads:layout_constraintEnd_toEndOf="parent"
+    ads:layout_constraintStart_toStartOf="parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ProgressBar
+            android:id="@+id/progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            ads:layout_constraintBottom_toBottomOf="parent"
+            ads:layout_constraintEnd_toEndOf="parent"
+            ads:layout_constraintStart_toStartOf="parent"
+            ads:layout_constraintTop_toTopOf="parent" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lootie"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            ads:layout_constraintEnd_toEndOf="parent"
+            ads:layout_constraintStart_toStartOf="parent"
+            ads:layout_constraintTop_toTopOf="parent"
+            ads:lottie_autoPlay="true"
+            ads:lottie_loop="true" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvDonate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            ads:layout_constraintBottom_toTopOf="@+id/btnCancel"
+            ads:layout_constraintEnd_toEndOf="parent"
+            ads:layout_constraintStart_toStartOf="parent"
+            ads:layout_constraintTop_toBottomOf="@+id/lootie"
+            ads:layout_constraintVertical_bias="0.496"
+            tools:itemCount="1"
+            tools:listitem="@layout/item_donate" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnCancel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_weight="1"
+            android:background="@drawable/bg_border_image"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/kembali"
+            android:textSize="12sp"
+            ads:layout_constraintBottom_toBottomOf="parent"
+            ads:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

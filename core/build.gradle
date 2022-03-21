@@ -1,0 +1,88 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'kotlin-parcelize'
+    id 'kotlin-kapt'
+}
+apply from: '../shared_dependencies.gradle'
+
+android {
+    compileSdk 31
+
+    defaultConfig {
+        minSdk 21
+        targetSdk 31
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+
+        buildConfigField("String", "DB_LOCAL_NAME", "\"oz3S2JnzQ7elXXaQL4su2uY\"")
+        buildConfigField("String", "BASE_URL", "\"https://ml-skin-tool-api-v3g57.ondigitalocean.app/api/\"")
+        buildConfigField("String", "BASE_NGROK", "\"https://5e67-182-1-88-41.ngrok.io/ml_skin_tool_api/public/api/\"")
+        buildConfigField("String", "BASE_FILES", "\"https://candlekeeper-files.sgp1.digitaloceanspaces.com/ml-skins-tool/data_dummy/\"")
+        buildConfigField("String", "API_KEY", "\"id.candle.keeper\"")
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding = true
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+
+    //kotlin coroutines
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2"
+    api "androidx.lifecycle:lifecycle-livedata-ktx:2.4.1"
+
+    //room db
+    implementation "androidx.room:room-runtime:2.4.2"
+    kapt "androidx.room:room-compiler:2.4.2"
+    androidTestImplementation "androidx.room:room-testing:2.4.2"
+    implementation "androidx.room:room-ktx:2.4.2"
+
+    //sqlcipher
+    implementation "net.zetetic:android-database-sqlcipher:4.4.0"
+    implementation "androidx.sqlite:sqlite-ktx:2.2.0"
+
+    //firestore
+//    implementation 'com.google.firebase:firebase-firestore:24.0.0'
+
+    // Gson
+    implementation 'com.google.code.gson:gson:2.8.9'
+
+    // encrypt preferences
+    implementation "androidx.security:security-crypto:1.1.0-alpha03"
+    implementation 'com.scottyab:secure-preferences-lib:0.1.7'
+
+    //zxing barcode
+//    implementation 'com.google.zxing:core:3.3.0'
+
+    //retrofit
+    implementation "com.squareup.retrofit2:retrofit:2.9.0"
+    implementation "com.squareup.retrofit2:converter-gson:2.9.0"
+
+    //ok http
+//    implementation 'com.squareup.okhttp3:okhttp:4.9.0'
+    implementation "com.squareup.okhttp3:logging-interceptor:4.9.3"
+}

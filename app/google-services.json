@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "788614925605",
+    "project_id": "ml-skin-tool",
+    "storage_bucket": "ml-skin-tool.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:788614925605:android:739d778a4b07473ccc1ecc",
+        "android_client_info": {
+          "package_name": "id.candlekeeper.skinpackml"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "788614925605-in8b0poq8tc17bd4etvfjpd7u5el61vi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAi6dZ2XtOEMP_U2jGBCLnJXJjYSNviSrQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "788614925605-in8b0poq8tc17bd4etvfjpd7u5el61vi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

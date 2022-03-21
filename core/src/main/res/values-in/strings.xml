@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="lihat">Lihat</string>
+    <string name="pilih_skins">pilih Pack </string>
+    <string name="kamu_disini"> kamu disini..</string>
+    <string name="note">Note : Hanya Untuk User Indonesia</string>
+    <string name="dukung_kita_dengan_scan_barcode_atau_klik_disini">Dukung kita dengan scan Barcode atau klik disini :)</string>
+    <string name="note_user_international_gunakan_ini">Note : User International gunakan ini</string>
+    <string name="double_click">harus DOUBLE CLICK icon !</string>
+</resources>

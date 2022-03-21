@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="berikan_kami_masukan">Give Us Feedback</string>
+    <string name="jika_ada_masukan">If you have any suggestions, please send them to the menu below..</string>
+    <string name="pagi">Hi..Good morning</string>
+    <string name="siang">Hi.. good afternoon</string>
+    <string name="sore">Hi.. Good afternoon</string>
+    <string name="malam">Hi.. Good night</string>
+    <string name="about">About</string>
+    <string name="desc">This application is only a visual script skin with a 90% similarity level, to give you experience using skins before you buy them, for a better skin experience, you can buy skins and support Moonton so that it can continue to grow and we can continue to play. If there are problems, bugs, or feel aggrieved, you can contact our email \n Sincerely, Candle Keeper Team \n Email : candle.keeper2021@gmail.com</string>
+    <string name="give_us_some_coffe">Give Us Some Coffe :(</string>
+</resources>
