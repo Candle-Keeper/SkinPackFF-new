@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="id.candlekeeper.skinpackml">
+    package="id.candlekeeper.skinpackff">
 
     <!-- encrpyt sharepref -->
     <uses-sdk tools:overrideLibrary="androidx.security" />
@@ -24,7 +24,7 @@
     </queries>
 
     <application
-        android:name=".MyApp"
+        android:name="id.candlekeeper.skinpackff.MyApp"
         android:allowBackup="true"
         android:hardwareAccelerated="true"
         android:icon="@mipmap/logo"
@@ -36,19 +36,16 @@
         tools:targetApi="n">
 
         <activity
-            android:name=".ui.heroList.HeroListActivity"
+            android:name="id.candlekeeper.skinpackff.ui.detailSkin.DetailSkinActivity"
             android:exported="true" />
         <activity
-            android:name=".ui.detailSkin.DetailSkinActivity"
+            android:name="id.candlekeeper.skinpackff.ui.skinList.SkinListActivity"
             android:exported="true" />
         <activity
-            android:name=".ui.skinList.SkinListActivity"
+            android:name="id.candlekeeper.skinpackff.ui.home.HomeActivity"
             android:exported="true" />
         <activity
-            android:name=".ui.home.HomeActivity"
-            android:exported="true" />
-        <activity
-            android:name=".ui.splash.SplashActivity"
+            android:name="id.candlekeeper.skinpackff.ui.splash.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -78,7 +75,7 @@
             android:resource="@drawable/ic_notifications" />
 
         <service
-            android:name=".utils.function.MyMessagingService"
+            android:name="id.candlekeeper.skinpackff.utils.function.MyMessagingService"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />

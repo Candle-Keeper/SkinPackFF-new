@@ -25,16 +25,16 @@ fun getIdBannerDownload(prefManager: PrefManager): Admob {
     return getAdsInPref(prefManager, "banner_download")
 }
 
-fun showAdsBanner(
-    context: Context,
-    activity: Activity,
-    bannerData: Admob,
-    view: ViewGroup,
-    adRequest: AdRequest
-) {
-    val mAdView = AdView(context)
-    mAdView.adSize = adsBannerType(bannerData, activity, context)
-    mAdView.adUnitId = bannerData.adsIdAdmob
-    view.addView(mAdView)
-    mAdView.loadAd(adRequest)
-}
+//fun showAdsBanner(
+//    context: Context,
+//    activity: Activity,
+//    bannerData: Admob,
+//    view: ViewGroup,
+//    adRequest: AdRequest
+//) {
+//    val mAdView = AdView(context)
+//    mAdView.adSize = adsBannerType(bannerData, activity, context)
+//    mAdView.adUnitId = bannerData.adsIdAdmob
+//    view.addView(mAdView)
+//    mAdView.loadAd(adRequest)
+//}

@@ -33,7 +33,7 @@ import id.candlekeeper.core.domain.model.dataIncome.Admob
 import id.candlekeeper.core.utils.PrefManager
 import id.candlekeeper.core.utils.hide
 import id.candlekeeper.core.utils.show
-import id.candlekeeper.core.utils.toast
+
 
 
 fun getAdsInPref(prefManager: PrefManager, idName: String): Admob {

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name" translatable="false">ML Skin Tools - Pro</string>
+    <string name="app_name" translatable="false">FF Skin Tools - Pro</string>
 
     <!--    id iklan debug-->
     <string name="app_id" translatable="false">ca-app-pub-3940256099942544~3347511713</string>
@@ -25,7 +25,7 @@
     <string name="tutor_3_android11">3. Click Install Manually and Install the CX File Xplorer Application for folder management on Android 11 and above..</string>
     <string name="tutor_4_andro11">4. move the "com.mobile.legends" folder in the "Storage/Download/Skin Pack Mobile Legends/" folder to the "Storage/Android/data/" folder and dont forget to select overwrite to replace all existing files..</string>
     <string name="welcome">Welcome</string>
-    <string name="mobile_legends_skins_tools">Mobile Legends Skins Tools</string>
+    <string name="mobile_legends_skins_tools">FF Skins Tools</string>
     <string name="pasang_skin_original">Install your original skin and skin pack here..</string>
     <string name="additional_pack">Additional Pack</string>
     <string name="pasang_emot_pack">Install Emot Pack etc \nhere ..</string>

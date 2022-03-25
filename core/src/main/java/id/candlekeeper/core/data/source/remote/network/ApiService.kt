@@ -32,43 +32,20 @@ interface ApiService {
         @Header("Authorization") token: String
     ): Response<ListDataContentResponse>
 
-    @GET("category")
-    suspend fun getCategory(
+    @GET("heroes")
+    suspend fun getHeroes(
         @Header("Authorization") token: String
     ): Response<ListDataContentResponse>
 
-    @GET("heroes/{idCategory}")
-    suspend fun getHeroes(
-        @Header("Authorization") token: String,
-        @Path("idCategory") idCategory: Int
-    ): Response<ListDataContentResponse>
-
-    @GET("script/{idHero}")
+    @GET("skins/{idHero}")
     suspend fun getSkins(
         @Header("Authorization") token: String,
         @Path("idHero") idHero: Int
     ): Response<ListDataContentResponse>
 
-    @GET("script")
+    @GET("skins")
     suspend fun getAllSkins(
         @Header("Authorization") token: String
-    ): Response<ListDataContentResponse>
-
-    @GET("additional/category")
-    suspend fun getAdditionalCategory(
-        @Header("Authorization") token: String
-    ): Response<ListDataContentResponse>
-
-    @GET("additional/heroes/{idCategory}")
-    suspend fun getAdditionalHeroes(
-        @Header("Authorization") token: String,
-        @Path("idCategory") idCategory: Int
-    ): Response<ListDataContentResponse>
-
-    @GET("additional/script/{idHero}")
-    suspend fun getAdditionalSkins(
-        @Header("Authorization") token: String,
-        @Path("idHero") idHero: Int
     ): Response<ListDataContentResponse>
 
 
@@ -85,7 +62,7 @@ interface ApiService {
 
 
     /*---- Data Additional----*/
-    @GET("url_tutorial")
+    @GET("tutorial")
     suspend fun getUrlTutorial(
         @Header("Authorization") token: String
     ): Response<ListDataAdditionalResponse>

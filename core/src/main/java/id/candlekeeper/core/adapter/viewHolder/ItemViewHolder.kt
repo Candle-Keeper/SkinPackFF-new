@@ -8,7 +8,6 @@ import id.candlekeeper.core.databinding.ItemHeroBinding
 import id.candlekeeper.core.databinding.ItemSkinsBinding
 import id.candlekeeper.core.databinding.ItemTutorialBinding
 import id.candlekeeper.core.domain.model.dataAdditional.UrlTutorial
-import id.candlekeeper.core.domain.model.dataContent.Category
 import id.candlekeeper.core.domain.model.dataContent.Heroes
 import id.candlekeeper.core.domain.model.dataContent.Skins
 import id.candlekeeper.core.utils.*
@@ -20,23 +19,6 @@ class UrlTutorialViewHolder(private val binding: ItemTutorialBinding) :
         with(binding) {
             tvTutorial.text = data.name
             ivTutorial.loadImageYt(data.youtubeUrl!!)
-        }
-        binding.root.setOnClickListener {
-            onItemClicked.onEventClick(data)
-        }
-    }
-}
-
-class AddCategoryViewHolder(private val context: Context, private val binding: ItemHeroBinding) :
-    RecyclerView.ViewHolder(binding.root) {
-    fun bind(onItemClicked: OnItemClicked, data: Category, prefManager: PrefManager) {
-        with(binding) {
-            tvName.text = data.name
-            tvDescription.text =
-                context.resources.getString(R.string.pilih_skins) + " ${data.name} \n" + context.resources.getString(
-                    R.string.kamu_disini
-                )
-            imgBackground.loadImage(prefManager, data.imageUrl.toString())
         }
         binding.root.setOnClickListener {
             onItemClicked.onEventClick(data)

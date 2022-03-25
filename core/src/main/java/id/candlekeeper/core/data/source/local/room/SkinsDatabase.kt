@@ -7,13 +7,9 @@ import id.candlekeeper.core.data.source.local.entity.dataIncome.EndorseEntity
 
 @Database(
     entities = [
-        CategoryEntity::class,
         HeroesEntity::class,
         SkinsEntity::class,
-        EndorseEntity::class,
-        AddCategoryEntity::class,
-        AddHeroesEntity::class,
-        AddSkinsEntity::class], version = 9, exportSchema = false
+        EndorseEntity::class], version = 9, exportSchema = false
 )
 
 abstract class SkinsDatabase : RoomDatabase() {

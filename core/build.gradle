@@ -19,9 +19,8 @@ android {
         consumerProguardFiles "consumer-rules.pro"
 
         buildConfigField("String", "DB_LOCAL_NAME", "\"oz3S2JnzQ7elXXaQL4su2uY\"")
-        buildConfigField("String", "BASE_URL", "\"https://ml-skin-tool-api-v3g57.ondigitalocean.app/api/\"")
+        buildConfigField("String", "BASE_URL", "\"https://ff-skin-tools-api-zf9hf.ondigitalocean.app/api/\"")
         buildConfigField("String", "BASE_NGROK", "\"https://5e67-182-1-88-41.ngrok.io/ml_skin_tool_api/public/api/\"")
-        buildConfigField("String", "BASE_FILES", "\"https://candlekeeper-files.sgp1.digitaloceanspaces.com/ml-skins-tool/data_dummy/\"")
         buildConfigField("String", "API_KEY", "\"id.candle.keeper\"")
     }
 

@@ -27,12 +27,8 @@ class RemoteDataSource(private val apiService: ApiService) {
     var token: String? = ""
 
     companion object {
-        const val CONT_CATEGORY = "category"
         const val CONT_HEROES = "heroes"
         const val CONT_SKINS = "skins"
-        const val CONT_ADD_CATEGORY = "add_category"
-        const val CONT_ADD_HEROES = "add_heroes"
-        const val CONT_ADD_SKINS = "add_skins"
     }
 
 
@@ -108,19 +104,14 @@ class RemoteDataSource(private val apiService: ApiService) {
     //Data Content Feature
     suspend fun getDataContentAdvance(
         from: String,
-        idCategory: Int? = 0,
         idHero: Int? = 0
     ): Flow<ApiResponse<List<DataContentResponse>>> {
 
         suspend fun response(): Response<ListDataContentResponse> {
             return when (from) {
-                CONT_CATEGORY -> return apiService.getCategory(token!!)
-                CONT_HEROES -> return apiService.getHeroes(token!!, idCategory!!)
+                CONT_HEROES -> return apiService.getHeroes(token!!)
                 CONT_SKINS -> return apiService.getSkins(token!!, idHero!!)
-                CONT_ADD_CATEGORY -> return apiService.getAdditionalCategory(token!!)
-                CONT_ADD_HEROES -> return apiService.getAdditionalHeroes(token!!, idCategory!!)
-                CONT_ADD_SKINS -> return apiService.getAdditionalSkins(token!!, idHero!!)
-                else -> apiService.getCategory(token!!)
+                else -> apiService.getHeroes(token!!)
             }
         }
 

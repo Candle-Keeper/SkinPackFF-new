@@ -10,8 +10,6 @@ import com.startapp.sdk.ads.nativead.NativeAdDetails
 import id.candlekeeper.core.adapter.viewHolder.*
 import id.candlekeeper.core.databinding.*
 import id.candlekeeper.core.domain.model.dataAdditional.UrlTutorial
-import id.candlekeeper.core.domain.model.dataContent.Carousel
-import id.candlekeeper.core.domain.model.dataContent.Category
 import id.candlekeeper.core.domain.model.dataContent.Heroes
 import id.candlekeeper.core.domain.model.dataContent.Skins
 import id.candlekeeper.core.domain.model.dataIncome.Endorse
@@ -55,9 +53,6 @@ class CustomAdapter(
             }
             is UrlTutorial -> {
                 AdapterUtils.MENU_ITEM_URL_TUTOR
-            }
-            is Category -> {
-                AdapterUtils.MENU_ITEM_ADD_CATEGORY
             }
             is Heroes -> {
                 AdapterUtils.MENU_ITEM_HEROES
@@ -105,11 +100,6 @@ class CustomAdapter(
                     ItemTutorialBinding.inflate(LayoutInflater.from(parent.context), parent, false)
                 UrlTutorialViewHolder(menuLayout)
             }
-            AdapterUtils.MENU_ITEM_ADD_CATEGORY -> {
-                val menuLayout =
-                    ItemHeroBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-                AddCategoryViewHolder(parent.context, menuLayout)
-            }
             AdapterUtils.MENU_ITEM_HEROES -> {
                 val menuLayout =
                     ItemHeroBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -149,10 +139,6 @@ class CustomAdapter(
             AdapterUtils.MENU_ITEM_URL_TUTOR -> {
                 val menuItemHolder = holder as UrlTutorialViewHolder
                 menuItemHolder.bind(onItemClicked, list[position] as UrlTutorial)
-            }
-            AdapterUtils.MENU_ITEM_ADD_CATEGORY -> {
-                val menuItemHolder = holder as AddCategoryViewHolder
-                menuItemHolder.bind(onItemClicked, list[position] as Category, prefManager)
             }
             AdapterUtils.MENU_ITEM_HEROES -> {
                 val menuItemHolder = holder as HeroViewHolder

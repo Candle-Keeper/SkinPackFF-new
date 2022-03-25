@@ -7,7 +7,6 @@ import id.candlekeeper.core.domain.model.dataBaseApp.AppStatus
 import id.candlekeeper.core.domain.model.dataBaseApp.BaseApp
 import id.candlekeeper.core.domain.model.dataBaseApp.RequestMethod
 import id.candlekeeper.core.domain.model.dataContent.Carousel
-import id.candlekeeper.core.domain.model.dataContent.Category
 import id.candlekeeper.core.domain.model.dataContent.Heroes
 import id.candlekeeper.core.domain.model.dataContent.Skins
 import id.candlekeeper.core.domain.model.dataIncome.Admob
@@ -29,20 +28,11 @@ interface IAppUseCase {
 
     //Data Content Feature
     fun getCarousel(): Flow<ApiResponse<List<Carousel>>>
-    fun getCategory(): Flow<Resource<List<Category>>>
-    fun getHeroes(idCategory: Int): Flow<Resource<List<Heroes>>>
+    fun getHeroes(): Flow<Resource<List<Heroes>>>
     fun getSkins(idHero: Int): Flow<Resource<List<Skins>>>
     fun getSkinsIsHide(): Flow<ApiResponse<List<Skins>>>
     fun searchHeroes(idCategory: Int, search: String): Flow<List<Heroes>>
     fun searchSkins(idHero: Int, search: String): Flow<List<Skins>>
-
-    //Data Additional Content Feature
-    fun getAddCategory(): Flow<Resource<List<Category>>>
-    fun getAddHeroes(idCategory: Int): Flow<Resource<List<Heroes>>>
-    fun getAddSkins(idHero: Int): Flow<Resource<List<Skins>>>
-    fun getAllAddSkinsDb(): Flow<List<Skins>>
-    fun searchAddHeroes(idCategory: Int, search: String): Flow<List<Heroes>>
-    fun searchAddSkins(idHero: Int, search: String): Flow<List<Skins>>
 
 
     //Data Income Feature
@@ -82,11 +72,8 @@ class AppInteractor(private val iAppRepository: IAppRepository) : IAppUseCase {
     override fun getCarousel(): Flow<ApiResponse<List<Carousel>>> =
         iAppRepository.getCarousel()
 
-    override fun getCategory(): Flow<Resource<List<Category>>> =
-        iAppRepository.getCategory()
-
-    override fun getHeroes(idCategory: Int): Flow<Resource<List<Heroes>>> =
-        iAppRepository.getHeroes(idCategory)
+    override fun getHeroes(): Flow<Resource<List<Heroes>>> =
+        iAppRepository.getHeroes()
 
     override fun getSkins(idHero: Int): Flow<Resource<List<Skins>>> =
         iAppRepository.getSkins(idHero)
@@ -100,27 +87,6 @@ class AppInteractor(private val iAppRepository: IAppRepository) : IAppUseCase {
 
     override fun searchSkins(idHero: Int, search: String): Flow<List<Skins>> =
         iAppRepository.searchSkins(idHero, search)
-
-
-    //Data Content Feature
-    override fun getAddCategory(): Flow<Resource<List<Category>>> =
-        iAppRepository.getAddCategory()
-
-    override fun getAddHeroes(idCategory: Int): Flow<Resource<List<Heroes>>> =
-        iAppRepository.getAddHeroes(idCategory)
-
-    override fun getAddSkins(idHero: Int): Flow<Resource<List<Skins>>> =
-        iAppRepository.getAddSkins(idHero)
-
-    override fun getAllAddSkinsDb(): Flow<List<Skins>> {
-        return iAppRepository.getAllAddSkinsDb()
-    }
-
-    override fun searchAddHeroes(idCategory: Int, search: String): Flow<List<Heroes>> =
-        iAppRepository.searchAddHeroes(idCategory, search)
-
-    override fun searchAddSkins(idHero: Int, search: String): Flow<List<Skins>> =
-        iAppRepository.searchAddSkins(idHero, search)
 
 
     //Data Income Feature

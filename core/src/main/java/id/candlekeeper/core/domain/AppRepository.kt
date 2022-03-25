@@ -12,7 +12,6 @@ import id.candlekeeper.core.domain.model.dataBaseApp.AppStatus
 import id.candlekeeper.core.domain.model.dataBaseApp.BaseApp
 import id.candlekeeper.core.domain.model.dataBaseApp.RequestMethod
 import id.candlekeeper.core.domain.model.dataContent.Carousel
-import id.candlekeeper.core.domain.model.dataContent.Category
 import id.candlekeeper.core.domain.model.dataContent.Heroes
 import id.candlekeeper.core.domain.model.dataContent.Skins
 import id.candlekeeper.core.domain.model.dataIncome.Admob
@@ -36,20 +35,11 @@ interface IAppRepository {
 
     //Data Content Feature
     fun getCarousel(): Flow<ApiResponse<List<Carousel>>>
-    fun getCategory(): Flow<Resource<List<Category>>>
-    fun getHeroes(idCategory: Int): Flow<Resource<List<Heroes>>>
+    fun getHeroes(): Flow<Resource<List<Heroes>>>
     fun getSkins(idHero: Int): Flow<Resource<List<Skins>>>
     fun getSkinsIsHide(): Flow<ApiResponse<List<Skins>>>
     fun searchHeroes(idCategory: Int, search: String): Flow<List<Heroes>>
     fun searchSkins(idHero: Int, search: String): Flow<List<Skins>>
-
-    //Data Additional Content Feature
-    fun getAddCategory(): Flow<Resource<List<Category>>>
-    fun getAddHeroes(idCategory: Int): Flow<Resource<List<Heroes>>>
-    fun getAddSkins(idHero: Int): Flow<Resource<List<Skins>>>
-    fun getAllAddSkinsDb(): Flow<List<Skins>>
-    fun searchAddHeroes(idCategory: Int, search: String): Flow<List<Heroes>>
-    fun searchAddSkins(idHero: Int, search: String): Flow<List<Skins>>
 
     //Data Income Feature
     fun getAdsAdmob(): Flow<ApiResponse<List<Admob>>>
@@ -94,36 +84,10 @@ class AppRepository(
         return remoteDataSource.getCarousel()
     }
 
-    override fun getCategory(): Flow<Resource<List<Category>>> =
-        object : NetworkBoundResource<List<Category>, List<DataContentResponse>>() {
-            override fun loadFromDB(): Flow<List<Category>> {
-                return localDataSource.getCategory().map {
-                    DataMapper.mapCategoryEntToMod(it)
-                }
-            }
-
-            override fun shouldFetch(data: List<Category>?): Boolean {
-                return if (FirestoreMethodClass.category(prefManager)) {
-                    true
-                } else {
-                    data == null || data.isEmpty()
-                }
-            }
-
-            override suspend fun createCall(): Flow<ApiResponse<List<DataContentResponse>>> {
-                return remoteDataSource.getDataContentAdvance(RemoteDataSource.CONT_CATEGORY)
-            }
-
-            override suspend fun saveCallResult(data: List<DataContentResponse>) {
-                val result = DataMapper.mapCategoryResToEnt(data)
-                localDataSource.insertCategory(result)
-            }
-        }.asFlow()
-
-    override fun getHeroes(idCategory: Int): Flow<Resource<List<Heroes>>> =
+    override fun getHeroes(): Flow<Resource<List<Heroes>>> =
         object : NetworkBoundResource<List<Heroes>, List<DataContentResponse>>() {
             override fun loadFromDB(): Flow<List<Heroes>> {
-                return localDataSource.getHeroes(idCategory).map {
+                return localDataSource.getHeroes().map {
                     DataMapper.mapHeroesEntToMod(it)
                 }
             }
@@ -138,8 +102,7 @@ class AppRepository(
 
             override suspend fun createCall(): Flow<ApiResponse<List<DataContentResponse>>> {
                 return remoteDataSource.getDataContentAdvance(
-                    RemoteDataSource.CONT_HEROES,
-                    idCategory
+                    RemoteDataSource.CONT_HEROES
                 )
             }
 
@@ -168,7 +131,6 @@ class AppRepository(
             override suspend fun createCall(): Flow<ApiResponse<List<DataContentResponse>>> {
                 return remoteDataSource.getDataContentAdvance(
                     RemoteDataSource.CONT_SKINS,
-                    0,
                     idHero
                 )
             }
@@ -192,111 +154,6 @@ class AppRepository(
     override fun searchSkins(idHero: Int, search: String): Flow<List<Skins>> {
         return localDataSource.searchSkins(idHero, search).map {
             DataMapper.mapSkinsEntToMod(it)
-        }
-    }
-
-
-    //Data Additonal Content Feature
-    override fun getAddCategory(): Flow<Resource<List<Category>>> =
-        object : NetworkBoundResource<List<Category>, List<DataContentResponse>>() {
-            override fun loadFromDB(): Flow<List<Category>> {
-                return localDataSource.getAddCategory().map {
-                    DataMapper.mapAddCategoryEntToMod(it)
-                }
-            }
-
-            override fun shouldFetch(data: List<Category>?): Boolean {
-                return if (FirestoreMethodClass.addCategory(prefManager)) {
-                    true
-                } else {
-                    data == null || data.isEmpty()
-                }
-            }
-
-            override suspend fun createCall(): Flow<ApiResponse<List<DataContentResponse>>> {
-                return remoteDataSource.getDataContentAdvance(RemoteDataSource.CONT_ADD_CATEGORY)
-            }
-
-            override suspend fun saveCallResult(data: List<DataContentResponse>) {
-                val result = DataMapper.mapAddCategoryResToEnt(data)
-                localDataSource.insertAddCategory(result)
-            }
-        }.asFlow()
-
-    override fun getAddHeroes(idCategory: Int): Flow<Resource<List<Heroes>>> =
-        object : NetworkBoundResource<List<Heroes>, List<DataContentResponse>>() {
-            override fun loadFromDB(): Flow<List<Heroes>> {
-                return localDataSource.getAddHeroes(idCategory).map {
-                    DataMapper.mapAddHeroesEntToMod(it)
-                }
-            }
-
-            override fun shouldFetch(data: List<Heroes>?): Boolean {
-                return if (FirestoreMethodClass.addHeroes(prefManager)) {
-                    true
-                } else {
-                    data == null || data.isEmpty()
-                }
-            }
-
-            override suspend fun createCall(): Flow<ApiResponse<List<DataContentResponse>>> {
-                return remoteDataSource.getDataContentAdvance(
-                    RemoteDataSource.CONT_ADD_HEROES,
-                    idCategory
-                )
-            }
-
-            override suspend fun saveCallResult(data: List<DataContentResponse>) {
-                val result = DataMapper.mapAddHeroesResToEnt(data)
-                localDataSource.insertAddHeroes(result)
-            }
-        }.asFlow()
-
-    override fun getAddSkins(idHero: Int): Flow<Resource<List<Skins>>> =
-        object : NetworkBoundResource<List<Skins>, List<DataContentResponse>>() {
-            override fun loadFromDB(): Flow<List<Skins>> {
-                return localDataSource.getAddSkins(idHero).map {
-                    DataMapper.mapAddSkinsEntToMod(it)
-                }
-            }
-
-            override fun shouldFetch(data: List<Skins>?): Boolean {
-                return if (FirestoreMethodClass.addSkins(prefManager)) {
-                    true
-                } else {
-                    data == null || data.isEmpty()
-                }
-            }
-
-            override suspend fun createCall(): Flow<ApiResponse<List<DataContentResponse>>> {
-                return remoteDataSource.getDataContentAdvance(
-                    RemoteDataSource.CONT_ADD_SKINS,
-                    0,
-                    idHero
-                )
-            }
-
-            override suspend fun saveCallResult(data: List<DataContentResponse>) {
-                val result = DataMapper.mapAddSkinsResToEnt(data)
-                localDataSource.insertAddSkins(result)
-            }
-        }.asFlow()
-
-    override fun getAllAddSkinsDb(): Flow<List<Skins>> {
-        return localDataSource.getAllAddSkins().map {
-            DataMapper.mapAddSkinsEntToMod(it)
-        }
-    }
-
-    override fun searchAddHeroes(idCategory: Int, search: String): Flow<List<Heroes>> {
-        return localDataSource.searchAddHeroes(idCategory, search).map {
-            DataMapper.mapAddHeroesEntToMod(it)
-        }
-    }
-
-    override fun searchAddSkins(idHero: Int, search: String): Flow<List<Skins>> {
-        return localDataSource.searchAddSkins(idHero, search).map {
-            DataMapper.mapAddSkinsEntToMod(it)
         }
     }
 

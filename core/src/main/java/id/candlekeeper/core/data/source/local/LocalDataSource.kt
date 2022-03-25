@@ -11,13 +11,9 @@ import kotlinx.coroutines.flow.flowOn
 class LocalDataSource(private val mSkinsDao: SkinsDao) {
 
     //content feature
-    suspend fun insertCategory(insert: List<CategoryEntity>) = mSkinsDao.insertCategory(insert)
-
     suspend fun insertHeroes(insert: List<HeroesEntity>) = mSkinsDao.insertHeroes(insert)
 
     suspend fun insertSkins(insert: List<SkinsEntity>) = mSkinsDao.insertSkins(insert)
-
-    fun getCategory(): Flow<List<CategoryEntity>> = mSkinsDao.getCategory()
 
     fun getHeroes(idCategory: Int? = 0): Flow<List<HeroesEntity>> =
         mSkinsDao.getHeroes(idCategory!!)
@@ -29,30 +25,6 @@ class LocalDataSource(private val mSkinsDao: SkinsDao) {
 
     fun searchSkins(idHero: Int, search: String): Flow<List<SkinsEntity>> =
         mSkinsDao.searchSkins(idHero, search).flowOn(Dispatchers.Default).conflate()
-
-
-    //content feature
-    suspend fun insertAddCategory(insert: List<AddCategoryEntity>) =
-        mSkinsDao.insertAddCategory(insert)
-
-    suspend fun insertAddHeroes(insert: List<AddHeroesEntity>) = mSkinsDao.insertAddHeroes(insert)
-
-    suspend fun insertAddSkins(insert: List<AddSkinsEntity>) = mSkinsDao.insertAddSkins(insert)
-
-    fun getAddCategory(): Flow<List<AddCategoryEntity>> = mSkinsDao.getAddCategory()
-
-    fun getAddHeroes(idCategory: Int? = 0): Flow<List<AddHeroesEntity>> =
-        mSkinsDao.getAddHeroes(idCategory!!)
-
-    fun getAddSkins(idHero: Int? = 0): Flow<List<AddSkinsEntity>> = mSkinsDao.getAddSkins(idHero!!)
-
-    fun getAllAddSkins(): Flow<List<AddSkinsEntity>> = mSkinsDao.getAllAddSkins()
-
-    fun searchAddHeroes(idCategory: Int, search: String): Flow<List<AddHeroesEntity>> =
-        mSkinsDao.searchAddHeroes(idCategory, search).flowOn(Dispatchers.Default).conflate()
-
-    fun searchAddSkins(idHero: Int, search: String): Flow<List<AddSkinsEntity>> =
-        mSkinsDao.searchAddSkins(idHero, search).flowOn(Dispatchers.Default).conflate()
 
 
     //endorse feature

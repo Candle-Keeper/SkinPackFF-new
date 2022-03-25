@@ -11,7 +11,6 @@ import id.candlekeeper.core.domain.model.dataBaseApp.AppStatus
 import id.candlekeeper.core.domain.model.dataBaseApp.BaseApp
 import id.candlekeeper.core.domain.model.dataBaseApp.RequestMethod
 import id.candlekeeper.core.domain.model.dataContent.Carousel
-import id.candlekeeper.core.domain.model.dataContent.Category
 import id.candlekeeper.core.domain.model.dataContent.Heroes
 import id.candlekeeper.core.domain.model.dataContent.Skins
 import id.candlekeeper.core.domain.model.dataIncome.Admob
@@ -130,16 +129,6 @@ object DataMapper {
 
 
     //DataContent (map to ent)
-    fun mapCategoryResToEnt(input: List<DataContentResponse>): List<CategoryEntity> {
-        return input.map {
-            CategoryEntity(
-                it.id_category!!,
-                it.name!!,
-                it.image_url
-            )
-        }
-    }
-
     fun mapHeroesResToEnt(input: List<DataContentResponse>): List<HeroesEntity> {
         return input.map {
             HeroesEntity(
@@ -167,42 +156,6 @@ object DataMapper {
         }
     }
 
-    //Data Additional Content (map to ent)
-    fun mapAddCategoryResToEnt(input: List<DataContentResponse>): List<AddCategoryEntity> {
-        return input.map {
-            AddCategoryEntity(
-                it.id_category!!,
-                it.name!!,
-                it.image_url
-            )
-        }
-    }
-
-    fun mapAddHeroesResToEnt(input: List<DataContentResponse>): List<AddHeroesEntity> {
-        return input.map {
-            AddHeroesEntity(
-                it.id_heroes!!,
-                it.id_category!!,
-                it.name,
-                it.image_url!!
-            )
-        }
-    }
-
-    fun mapAddSkinsResToEnt(input: List<DataContentResponse>): List<AddSkinsEntity> {
-        return input.map {
-            AddSkinsEntity(
-                it.id_script,
-                it.id_heroes!!,
-                it.name!!,
-                it.image_url!!,
-                it.release,
-                it.size,
-                it.file_url,
-                it.youtube_url
-            )
-        }
-    }
 
     //DataIncome (map to ent)
     fun mapEndorseResToEnt(input: List<DataIncomeResponse>): List<EndorseEntity> {
@@ -232,16 +185,6 @@ object DataMapper {
 
 
     //DataContent (ent to mod)
-    fun mapCategoryEntToMod(input: List<CategoryEntity>): List<Category> {
-        return input.map {
-            Category(
-                it.idCategory!!,
-                it.name!!,
-                it.imageUrl
-            )
-        }
-    }
-
     fun mapHeroesEntToMod(input: List<HeroesEntity>): List<Heroes> {
         return input.map {
             Heroes(
@@ -269,45 +212,6 @@ object DataMapper {
         }
     }
 
-    //Data Additional Content (ent to mod)
-    fun mapAddCategoryEntToMod(input: List<AddCategoryEntity>): List<Category> {
-        return input.map {
-            Category(
-                it.idCategory!!,
-                it.name!!,
-                it.imageUrl,
-                true
-            )
-        }
-    }
-
-    fun mapAddHeroesEntToMod(input: List<AddHeroesEntity>): List<Heroes> {
-        return input.map {
-            Heroes(
-                it.idHeroes,
-                it.idCategory,
-                it.name!!,
-                it.imageUrl!!,
-                true
-            )
-        }
-    }
-
-    fun mapAddSkinsEntToMod(input: List<AddSkinsEntity>): List<Skins> {
-        return input.map {
-            Skins(
-                it.idScript!!,
-                it.idHeroes,
-                it.name,
-                it.imageUrl,
-                it.release,
-                it.size,
-                it.fileUrl,
-                it.youtubeUrl,
-                true
-            )
-        }
-    }
 
     //DataIncome (ent to mod)
     fun mapEndorseEntToMod(input: List<EndorseEntity>): List<Endorse> {

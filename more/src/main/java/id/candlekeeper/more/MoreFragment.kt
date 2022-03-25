@@ -22,8 +22,8 @@ import id.candlekeeper.core.utils.function.*
 import id.candlekeeper.more.databinding.FragmentMoreBinding
 import id.candlekeeper.more.di.moreModule
 import id.candlekeeper.more.dialog.DialogAbout
-import id.candlekeeper.skinpackml.ui.dialog.DialogFeedback
-import id.candlekeeper.skinpackml.ui.home.HomeActivity
+import id.candlekeeper.skinpackff.ui.dialog.DialogFeedback
+import id.candlekeeper.skinpackff.ui.home.HomeActivity
 import org.koin.android.ext.android.inject
 import org.koin.core.context.loadKoinModules
 import java.util.*
@@ -95,13 +95,13 @@ class MoreFragment : Fragment() {
             val dataBannerAds = getIdBannerMore(prefManager)
             val dataNativeAds = getIdNativeDialog(prefManager)
             if (dataBannerAds.isEnable!!) { //banner admob
-                showAdsBanner(
-                    requireContext(),
-                    requireActivity(),
-                    dataBannerAds,
-                    adsInclude.frameLayout,
-                    adRequest
-                )
+//                showAdsBanner(
+//                    requireContext(),
+//                    requireActivity(),
+//                    dataBannerAds,
+//                    adsInclude.frameLayout,
+//                    adRequest
+//                )
             } else {
                 setupAdsNativeApplovinSmall(
                     requireContext(),

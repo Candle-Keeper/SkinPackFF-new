@@ -97,6 +97,7 @@
         <entry key="app/src/main/res/drawable/ic_logo.xml" value="0.25" />
         <entry key="app/src/main/res/drawable/ic_menu.xml" value="0.27395833333333336" />
         <entry key="app/src/main/res/drawable/ic_more.xml" value="0.23703703703703705" />
+        <entry key="app/src/main/res/drawable/ic_notif.xml" value="0.275" />
         <entry key="app/src/main/res/drawable/ic_notification.xml" value="0.26666666666666666" />
         <entry key="app/src/main/res/drawable/ic_notifications.xml" value="0.26666666666666666" />
         <entry key="app/src/main/res/drawable/ic_play.xml" value="0.17133550488599347" />
@@ -105,6 +106,7 @@
         <entry key="app/src/main/res/drawable/ic_setting.xml" value="0.1730263157894737" />
         <entry key="app/src/main/res/drawable/ic_settings.xml" value="0.23981481481481481" />
         <entry key="app/src/main/res/drawable/ic_share.xml" value="0.17133550488599347" />
+        <entry key="app/src/main/res/drawable/ic_skins_selected.xml" value="0.275" />
         <entry key="app/src/main/res/drawable/loading_anim.xml" value="0.27395833333333336" />
         <entry key="app/src/main/res/drawable/loading_imafe.xml" value="0.27395833333333336" />
         <entry key="app/src/main/res/drawable/loading_image.xml" value="0.27395833333333336" />
@@ -125,7 +127,7 @@
         <entry key="app/src/main/res/layout/fragment_dialog_no_connection.xml" value="0.25092592592592594" />
         <entry key="app/src/main/res/layout/fragment_dialog_server_error.xml" value="0.335" />
         <entry key="app/src/main/res/layout/fragment_dialog_update_app.xml" value="0.335" />
-        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.25" />
         <entry key="app/src/main/res/layout/item_ad_native.xml" value="0.2578125" />
         <entry key="app/src/main/res/layout/item_ad_native_hero.xml" value="0.375" />
         <entry key="app/src/main/res/layout/item_ad_native_skins.xml" value="0.335" />
