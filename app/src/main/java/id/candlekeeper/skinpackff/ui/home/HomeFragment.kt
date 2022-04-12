@@ -37,6 +37,7 @@ import id.candlekeeper.skinpackff.R
 import id.candlekeeper.skinpackff.databinding.FragmentHomeBinding
 import id.candlekeeper.skinpackff.ui.detailSkin.DetailSkinActivity
 import id.candlekeeper.skinpackff.ui.dialog.DialogAds
+import id.candlekeeper.skinpackff.ui.dialog.DialogChooseMl
 import id.candlekeeper.skinpackff.ui.dialog.DialogServerError
 import id.candlekeeper.skinpackff.ui.dialog.DialogUpdateApp
 import id.candlekeeper.skinpackff.ui.skinList.SkinListActivity
@@ -91,6 +92,7 @@ class HomeFragment : Fragment(), OnItemClicked {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        showTypegame()
         initView()
         setList()
         setupRateView()
@@ -105,6 +107,11 @@ class HomeFragment : Fragment(), OnItemClicked {
         super.onPause()
         scrollHandler.removeCallbacksAndMessages(null)
         binding.mShimmerViewContainer.stopShimmer()
+    }
+
+    private fun showTypegame() {
+        AppAnalytics.trackDownload(AppAnalytics.Const.INSTALL)
+        DialogChooseMl {}.show(requireFragmentManager(), tag(requireContext()))
     }
 
 

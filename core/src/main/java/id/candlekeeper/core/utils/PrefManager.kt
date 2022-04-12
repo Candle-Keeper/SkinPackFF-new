@@ -98,10 +98,10 @@ class PrefManager(context: Context) {
         }
 
     //pref package name ml
-    var spPackageNameMl: String?
-        get() = sp.getString("spPackageNameMl", packageMlGlobal)
+    var spPackageNameFF: String?
+        get() = sp.getString("spPackageNameFF", packageFF)
         set(value) {
-            spe.putString("spPackageNameMl", value)
+            spe.putString("spPackageNameFF", value)
             spe.apply()
         }
 

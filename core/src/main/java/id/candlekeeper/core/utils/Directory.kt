@@ -17,7 +17,7 @@ fun destinationDownload(context: Context): File {
 }
 
 fun destinationUnzip(context: Context, prefManager: PrefManager): String {
-    val packageSkin = prefManager.spPackageNameMl + "/files/dragon2017/assets/"
+    val packageSkin = prefManager.spPackageNameFF + "/files/dragon2017/assets/"
 
     return if (isAboveAndroid11()) {
         context.getExternalFilesDir("")!!.path + "/${packageSkin}"

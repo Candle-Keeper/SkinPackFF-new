@@ -68,13 +68,13 @@ class DialogChooseMl(
         isCancelable = false
 
         with(binding) {
-            btnVietnam.setOnClickListener {
-                prefManager.spPackageNameMl = packageMlVietnam
+            btnFreeFire.setOnClickListener {
+                prefManager.spPackageNameFF = packageFF
                 dismiss()
                 onSubmit.invoke()
             }
-            btnGlobal.setOnClickListener {
-                prefManager.spPackageNameMl = packageMlGlobal
+            btnFreeFireMax.setOnClickListener {
+                prefManager.spPackageNameFF = packageFFMax
                 dismiss()
                 onSubmit.invoke()
             }

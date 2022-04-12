@@ -28,11 +28,11 @@
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/lootie"
                 android:layout_width="0dp"
-                android:layout_height="200dp"
+                android:layout_height="210dp"
                 ads:layout_constraintEnd_toEndOf="parent"
                 ads:layout_constraintStart_toStartOf="parent"
                 ads:layout_constraintTop_toTopOf="parent"
-                ads:srcCompat="@drawable/ml"/>
+                ads:srcCompat="@drawable/frefire"/>
 
             <TextView
                 android:id="@+id/tvSize"
@@ -73,26 +73,26 @@
                 ads:layout_constraintTop_toBottomOf="@+id/tvDescription">
 
                 <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/btnVietnam"
+                    android:id="@+id/btn_free_fire"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="12dp"
                     android:layout_weight="1"
                     android:background="@drawable/bg_border_image"
                     android:fontFamily="@font/poppins_medium"
-                    android:text="@string/versi_vietnam"
+                    android:text="@string/ff_biasa"
                     android:textColor="@color/black"
                     android:textSize="12sp" />
 
                 <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/btnGlobal"
+                    android:id="@+id/btn_free_fire_max"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="12dp"
                     android:layout_weight="1"
                     android:background="@drawable/bg_btn"
                     android:fontFamily="@font/poppins_medium"
-                    android:text="@string/versi_global"
+                    android:text="@string/ff_max"
                     android:textColor="@color/white"
                     android:textSize="12sp"
                     android:textStyle="bold" />

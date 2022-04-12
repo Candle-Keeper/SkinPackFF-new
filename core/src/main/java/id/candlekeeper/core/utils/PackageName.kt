@@ -1,8 +1,8 @@
 package id.candlekeeper.core.utils
 
 
-const val packageMlGlobal = "com.mobile.legends"
-const val packageMlVietnam = "com.vng.mlbbvn"
+const val packageFF = "com.dts.freefireth"
+const val packageFFMax = "com.dts.freefiremax"
 const val packageChrome = "com.android.chrome"
 
 const val packagePlaystore = "market://details?id="

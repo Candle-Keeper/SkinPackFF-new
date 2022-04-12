@@ -123,6 +123,7 @@
         <entry key="app/src/main/res/layout/ad_native.xml" value="0.25" />
         <entry key="app/src/main/res/layout/ads_banner.xml" value="0.16282894736842105" />
         <entry key="app/src/main/res/layout/content_home.xml" value="0.16282894736842105" />
+        <entry key="app/src/main/res/layout/fragment_dialog_choose_ml.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_dialog_install_skin.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_dialog_no_connection.xml" value="0.25092592592592594" />
         <entry key="app/src/main/res/layout/fragment_dialog_server_error.xml" value="0.335" />
@@ -150,6 +151,7 @@
         <entry key="app/src/main/res/menu/home_menu.xml" value="0.25" />
         <entry key="app/src/main/res/menu/menu_search.xml" value="0.16282894736842105" />
         <entry key="app/src/main/res/menu/test.xml" value="0.16282894736842105" />
+        <entry key="core/src/main/res/drawable/ic_broken_image.xml" value="0.1455" />
         <entry key="core/src/main/res/layout/item_ad_banner_list.xml" value="0.2578125" />
         <entry key="core/src/main/res/layout/item_ad_native_applovin.xml" value="0.3098958333333333" />
         <entry key="core/src/main/res/layout/item_ad_native_applovin_carousel.xml" value="0.3098958333333333" />

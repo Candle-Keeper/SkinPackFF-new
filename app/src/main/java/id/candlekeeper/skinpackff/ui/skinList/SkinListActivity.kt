@@ -10,7 +10,6 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.applovin.mediation.nativeAds.MaxNativeAdView
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.nativead.NativeAd
-import com.ironsource.mediationsdk.IronSource
 import com.startapp.sdk.ads.nativead.NativeAdDetails
 import id.candlekeeper.core.adapter.CustomAdapter
 import id.candlekeeper.core.data.Resource
@@ -70,7 +69,6 @@ class SkinListActivity : AppCompatActivity(), OnItemClicked, View.OnClickListene
 
     override fun onResume() {
         super.onResume()
-        IronSource.onResume(this)
         loadAdsActivityIntertisial(this, this, adRequest, prefManager)
     }
 
@@ -295,7 +293,6 @@ class SkinListActivity : AppCompatActivity(), OnItemClicked, View.OnClickListene
 
     override fun onPause() {
         super.onPause()
-        IronSource.onPause(this)
         binding.mShimmerViewContainer.stopShimmer()
     }
 

@@ -1,13 +1,7 @@
 package id.candlekeeper.core.utils.function
 
-import android.app.Activity
-import android.content.Context
-import android.view.ViewGroup
-import com.google.android.gms.ads.AdRequest
-import com.google.android.gms.ads.AdView
 import id.candlekeeper.core.domain.model.dataIncome.Admob
 import id.candlekeeper.core.utils.PrefManager
-import id.candlekeeper.core.utils.adsBannerType
 
 fun getIdBannerMore(prefManager: PrefManager): Admob {
     return getAdsInPref(prefManager, "banner_more")

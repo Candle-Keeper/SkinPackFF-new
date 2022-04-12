@@ -4,20 +4,16 @@ import android.app.Application
 import android.util.Log
 import com.applovin.sdk.AppLovinPrivacySettings
 import com.applovin.sdk.AppLovinSdk
-import com.google.ads.mediation.inmobi.InMobiConsent
 import com.google.android.gms.ads.MobileAds
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.FirebaseApp
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.messaging.ktx.messaging
-import com.inmobi.sdk.InMobiSdk
 import com.startapp.sdk.adsbase.StartAppSDK
 import id.candlekeeper.core.di.*
 import id.candlekeeper.core.utils.isDebug
 import id.candlekeeper.skinpackff.di.useCaseModule
 import id.candlekeeper.skinpackff.di.viewModelModule
-import org.json.JSONException
-import org.json.JSONObject
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.logger.Level
@@ -59,15 +55,6 @@ class MyApp : Application() {
         if (isDebug()) {
             StartAppSDK.setTestAdsEnabled(true)
         }
-
-        // setup inmobi
-        val consentObject = JSONObject()
-        try {
-            consentObject.put(InMobiSdk.IM_GDPR_CONSENT_AVAILABLE, true)
-            consentObject.put("gdpr", "1")
-        } catch (exception: JSONException) {
-        }
-        InMobiConsent.updateGDPRConsent(consentObject)
     }
 
     private fun startKoin() {

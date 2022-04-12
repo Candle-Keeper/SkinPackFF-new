@@ -194,7 +194,7 @@ class DialogInstallSkin(
                         viewModel.startDownload(prefManager, requireContext(), detailSkins?.fileUrl.toString())
                     }
                     "success" -> {
-                        doInstallFirst()
+                        doInstallSkin()
                     }
                     "install" -> {
                         requireActivity().toast(resources.getString(R.string.tunggu_proses_install_belum_selesai))
@@ -205,13 +205,6 @@ class DialogInstallSkin(
                 }
             }
         }
-    }
-
-    private fun doInstallFirst() {
-        AppAnalytics.trackDownload(AppAnalytics.Const.INSTALL)
-        DialogChooseMl {
-            doInstallSkin()
-        }.show(requireFragmentManager(), tag(requireContext()))
     }
 
     //proses install skins
@@ -259,7 +252,7 @@ class DialogInstallSkin(
     //intent ke mobile legend
     private fun intentToML() {
         val launchIntent =
-            requireActivity().packageManager.getLaunchIntentForPackage(prefManager.spPackageNameMl!!)
+            requireActivity().packageManager.getLaunchIntentForPackage(prefManager.spPackageNameFF!!)
 
         if (launchIntent != null) {
             try {
@@ -483,7 +476,7 @@ class DialogInstallSkin(
             tvDescription.text = resources.getString(R.string.coba_install_kembali)
             btnCancel.text = resources.getString(R.string.kembali)
             btnInstall.setOnClickListener {
-                doInstallFirst()
+                doInstallSkin()
             }
         }
     }

@@ -11,7 +11,7 @@
     <string name="tutor_3_android11">3. Klik Instal Manual dan Install Aplikasi Xplore untuk manajemen folder di android 11 keatas..</string>
     <string name="tutor_4_andro11">4. pindahkan folder com.mobile.legends yang ada di folder Storage/Dwonload/Skin Pack Mobile Legends/ ke folder Storage/Android/data/ dan jangan lupa pilih overwrite untuk mengganti semua file yang ada..</string>
     <string name="welcome">Selamat Datang</string>
-    <string name="mobile_legends_skins_tools">Mobile Legends Skins Tools</string>
+    <string name="mobile_legends_skins_tools">Free Fire Skins Tools</string>
     <string name="pasang_skin_original">Pasang skin original dan skin pack kamu disini..</string>
     <string name="additional_pack">Additional Pack</string>
     <string name="pasang_emot_pack">Pasang Emot Pack dll \ndisini..</string>
@@ -38,7 +38,7 @@
     <string name="tunggu_proses_install_sedang">Tunggu proses install sedang berlangsung..</string>
     <string name="skin_berhasil_dipasang">berhasil di pasang..</string>
     <string name="buka_ml">Buka Game</string>
-    <string name="ml_tidak_ada">Game Mobile Legends Tidak Ada di perangkat kamu..</string>
+    <string name="ml_tidak_ada">Game Free Fire Tidak Ada di perangkat kamu..</string>
     <string name="buka_aplikasi_files">Buka Aplikasi Files Untuk Memindahkan Folder..</string>
     <string name="tunggu_proses_download_sedang_berlangsung">Tunggu Proses Download Sedang berlangsung..</string>
     <string name="reload">Refresh</string>
@@ -74,8 +74,6 @@
     <string name="send">Kirim</string>
     <string name="jika_ada_masalah">jika ada masalah di skins ini, segera laporkan dengan klik menu ini supaya segera di perbaiki!!</string>
     <string name="pilih_jenis_game">Pilih Jenis Game</string>
-    <string name="pilih_sesuai">pilih sesuai dengan Game Mobile Legends yang anda install, supaya skins berhasil dipasang !!</string>
-    <string name="versi_global">Versi Global</string>
-    <string name="versi_vietnam">Versi Vietnam</string>
+    <string name="pilih_sesuai">pilih sesuai dengan Game Free Fire yang anda install, supaya skins berhasil dipasang !!</string>
     <string name="centang_jika_tidak_ingin_menampilkan_ini_lagi">centang jika tidak ingin menampilkan ini lagi</string>
 </resources>

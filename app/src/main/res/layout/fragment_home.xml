@@ -33,9 +33,6 @@
                 android:orientation="vertical">
 
                 <include layout="@layout/shimer_carousel" />
-
-                <include layout="@layout/shimer_category" />
-
                 <include layout="@layout/shimer_list_hero" />
 
                 <include layout="@layout/shimer_list_hero" />

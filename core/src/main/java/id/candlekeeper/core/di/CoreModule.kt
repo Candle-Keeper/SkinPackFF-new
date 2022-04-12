@@ -54,10 +54,10 @@ val networkModule = module {
         val trustManager = trustManagers[0] as X509TrustManager
 
         OkHttpClient.Builder()
-            .sslSocketFactory(
-                SSLCertificateConfigurator.getSSLConfiguration(androidContext()).socketFactory,
-                trustManager
-            )
+//            .sslSocketFactory(
+//                SSLCertificateConfigurator.getSSLConfiguration(androidContext()).socketFactory,
+//                trustManager
+//            )
             .addInterceptor(HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))
             .connectTimeout(timeOut, TimeUnit.SECONDS)
             .readTimeout(timeOut, TimeUnit.SECONDS)
