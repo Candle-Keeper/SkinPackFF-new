@@ -151,7 +151,8 @@ object DataMapper {
                 it.size,
                 it.file_url,
                 it.youtube_url,
-                isHide = false
+                isHide = false,
+                it.isMax
             )
         }
     }
@@ -207,7 +208,8 @@ object DataMapper {
                 it.size,
                 it.fileUrl,
                 it.youtubeUrl,
-                isHide = false
+                isHide = false,
+                it.isMax
             )
         }
     }

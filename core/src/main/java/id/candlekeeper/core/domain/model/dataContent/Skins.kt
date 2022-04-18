@@ -13,5 +13,6 @@ data class Skins(
     var size: String? = "",
     var fileUrl: String? = "",
     var youtubeUrl: String? = "",
-    var isHide: Boolean? = false
+    var isHide: Boolean? = false,
+    var isMax: Boolean? = false
 ) : Parcelable

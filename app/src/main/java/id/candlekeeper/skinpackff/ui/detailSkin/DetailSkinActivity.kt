@@ -125,18 +125,23 @@ class DetailSkinActivity : AppCompatActivity(), OnItemClicked,
             }
             ivDownload.setOnClickListener {
                 AppAnalytics.trackDownload(AppAnalytics.Const.DOWNLOAD)
-                if (isAboveAndroid11()) {
-                    if (prefManager.spIsSAF) {
-                        toDownloadDialog()
+                if (detailSkins!!.isMax!! && prefManager.spPackageNameFF == packageFFMax || !detailSkins!!.isMax!! && prefManager.spPackageNameFF == packageFF) {
+                    if (isAboveAndroid11()) {
+                        if (prefManager.spIsSAF) {
+                            toDownloadDialog()
+                        } else {
+                            checkPermissionSaf()
+                        }
                     } else {
-                        checkPermissionSaf()
+                        if (checkPermission10()) {
+                            toDownloadDialog()
+                        } else {
+                            reqPermission10()
+                        }
                     }
                 } else {
-                    if (checkPermission10()) {
-                        toDownloadDialog()
-                    } else {
-                        reqPermission10()
-                    }
+                    val gameType = if (detailSkins!!.isMax!!) "MAX" else "FF"
+                    binding.root.snackbar("${getString(R.string.skin_hanya_utk)} $gameType, ${getString(R.string.pilih_skin_yg_lain)}")
                 }
             }
             ivYoutube.setOnClickListener {

@@ -27,12 +27,13 @@
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/lootie"
-                android:layout_width="0dp"
-                android:layout_height="210dp"
+                android:layout_width="314dp"
+                android:layout_height="207dp"
                 ads:layout_constraintEnd_toEndOf="parent"
+                ads:layout_constraintHorizontal_bias="0.0"
                 ads:layout_constraintStart_toStartOf="parent"
                 ads:layout_constraintTop_toTopOf="parent"
-                ads:srcCompat="@drawable/frefire"/>
+                ads:srcCompat="@drawable/frefire" />
 
             <TextView
                 android:id="@+id/tvSize"

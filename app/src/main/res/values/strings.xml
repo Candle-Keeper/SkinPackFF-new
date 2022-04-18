@@ -33,7 +33,7 @@
     <string name="skins_custom_aja">Skins Custom</string>
     <string name="pasang_skins_brody">Install Skins Brody Mod\nNaruto etc, here..</string>
     <string name="popular_skin">Popular Skins</string>
-    <string name="_2021_2022_candle_keeper">2021 - 2022 Candle Keeper \n All Right Reserve</string>
+    <string name="_2021_2022_candle_keeper" translatable="false">Support By Crevto</string>
     <string name="cancel">Cancel</string>
     <string name="install">Install</string>
     <string name="download_selesai">Download Complete, Click Install</string>
@@ -91,8 +91,10 @@
     <string name="send">Send</string>
     <string name="jika_ada_masalah">if there is a problem with these skins, report it immediately by clicking this menu so that it can be fixed immediately!!</string>
     <string name="pilih_jenis_game">Select Game Type</string>
-    <string name="pilih_sesuai">choose according to the Free Fire game you installed, so that the skins are successfully installed !!</string>
+    <string name="pilih_sesuai">choose according to the Free Fire Game you want to install, so that the skins are successfully installed !!</string>
     <string name="ff_biasa" translatable="false">Free Fire</string>
-    <string name="ff_max" translatable="false">Fre Fire Max</string>
+    <string name="ff_max" translatable="false">Free Fire Max</string>
     <string name="centang_jika_tidak_ingin_menampilkan_ini_lagi">check if you dont want to show this again</string>
+    <string name="skin_hanya_utk">skin only for</string>
+    <string name="pilih_skin_yg_lain">select another skin</string>
 </resources>

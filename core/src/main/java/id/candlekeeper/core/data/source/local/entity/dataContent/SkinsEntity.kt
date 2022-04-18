@@ -36,5 +36,8 @@ data class SkinsEntity(
     var youtubeUrl: String? = "",
 
     @ColumnInfo(name = "isHide")
-    var isHide: Boolean? = false
+    var isHide: Boolean? = false,
+
+    @ColumnInfo(name = "isMax")
+    var isMax: Boolean? = false
 )

@@ -50,6 +50,9 @@ class SkinsViewHolder(private val binding: ItemSkinsBinding) :
         with(binding) {
             tvTitle.text = data.name
             imgBackground.loadImage(prefManager, data.imageUrl.toString())
+            tvTypeScript.let {
+                if (data.isMax!!) it.text = "Max" else it.hide()
+            }
         }
         binding.root.setOnClickListener {
             onItemClicked.onEventClick(data)

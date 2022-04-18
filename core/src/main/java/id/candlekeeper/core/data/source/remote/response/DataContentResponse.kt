@@ -49,4 +49,7 @@ data class DataContentResponse(
 
     @field:SerializedName("is_hide")
     var is_hide: Boolean? = false,
+
+    @field:SerializedName("isMax")
+    var isMax: Boolean? = false,
 )

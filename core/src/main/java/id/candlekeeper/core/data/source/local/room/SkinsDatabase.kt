@@ -9,7 +9,7 @@ import id.candlekeeper.core.data.source.local.entity.dataIncome.EndorseEntity
     entities = [
         HeroesEntity::class,
         SkinsEntity::class,
-        EndorseEntity::class], version = 9, exportSchema = false
+        EndorseEntity::class], version = 10, exportSchema = false
 )
 
 abstract class SkinsDatabase : RoomDatabase() {

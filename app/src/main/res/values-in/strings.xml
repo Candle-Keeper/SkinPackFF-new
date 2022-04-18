@@ -19,7 +19,6 @@
     <string name="skins_custom_aja">Skins Custom</string>
     <string name="pasang_skins_brody">Pasang Skins Brody Mod\nNaruto dll, disini..</string>
     <string name="popular_skin">Skins Populer</string>
-    <string name="_2021_2022_candle_keeper">2021 - 2022 Candle Keeper \n All Right Reserve</string>
     <string name="cancel">Cancel</string>
     <string name="install">Install</string>
     <string name="download_selesai">Download Selesai, Klik Install</string>
@@ -74,6 +73,8 @@
     <string name="send">Kirim</string>
     <string name="jika_ada_masalah">jika ada masalah di skins ini, segera laporkan dengan klik menu ini supaya segera di perbaiki!!</string>
     <string name="pilih_jenis_game">Pilih Jenis Game</string>
-    <string name="pilih_sesuai">pilih sesuai dengan Game Free Fire yang anda install, supaya skins berhasil dipasang !!</string>
+    <string name="pilih_sesuai">pilih sesuai dengan Game Free Fire yang ingin anda install, supaya skins berhasil dipasang !!</string>
     <string name="centang_jika_tidak_ingin_menampilkan_ini_lagi">centang jika tidak ingin menampilkan ini lagi</string>
+    <string name="skin_hanya_utk">skin hanya untuk</string>
+    <string name="pilih_skin_yg_lain">pilih skin yang lain</string>
 </resources>

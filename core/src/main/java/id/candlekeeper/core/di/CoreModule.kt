@@ -34,6 +34,7 @@ val databaseModule = module {
             SkinsDatabase::class.java, BuildConfig.DB_LOCAL_NAME
         ).fallbackToDestructiveMigration()
             .openHelperFactory(factory)
+            .fallbackToDestructiveMigration()
             .build()
     }
 }
