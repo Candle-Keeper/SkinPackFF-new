@@ -27,8 +27,8 @@
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/lootie"
-                android:layout_width="314dp"
-                android:layout_height="207dp"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
                 ads:layout_constraintEnd_toEndOf="parent"
                 ads:layout_constraintHorizontal_bias="0.0"
                 ads:layout_constraintStart_toStartOf="parent"

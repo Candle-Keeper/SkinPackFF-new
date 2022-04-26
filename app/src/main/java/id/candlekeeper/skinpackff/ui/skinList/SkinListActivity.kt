@@ -26,6 +26,7 @@ import id.candlekeeper.skinpackff.R
 import id.candlekeeper.skinpackff.databinding.ActivitySkinListBinding
 import id.candlekeeper.skinpackff.ui.detailSkin.DetailSkinActivity
 import id.candlekeeper.skinpackff.ui.detailSkin.DetailSkinActivity.Companion.DETAIL_SKINS
+import id.candlekeeper.skinpackff.ui.dialog.DialogChooseMl
 import org.koin.android.ext.android.inject
 import org.koin.android.viewmodel.ext.android.viewModel
 
@@ -76,6 +77,24 @@ class SkinListActivity : AppCompatActivity(), OnItemClicked, View.OnClickListene
         heroes = intent.extras?.getParcelable(HEROES)
         isHideSkins = intent.extras?.getBoolean(IS_HIDE_SKINS)
 
+        val typeScript = when(heroes?.name) {
+            "FF ORIGINAL" -> {
+                prefManager.spPackageNameFF = packageFF
+                getString(R.string.game_type_ff)
+            }
+            "FF MAX" -> {
+                prefManager.spPackageNameFF = packageFFMax
+                getString(R.string.game_type_max)
+            }
+            "MULTI VERSION" -> {
+                showTypeGame()
+                getString(R.string.game_type_double)
+            }
+            else -> {
+                prefManager.spPackageNameFF = packageFF
+                getString(R.string.game_type_ff)
+            }
+        }
 
         //setup recycler
         with(binding.rvSkins) {
@@ -99,6 +118,7 @@ class SkinListActivity : AppCompatActivity(), OnItemClicked, View.OnClickListene
         //init View
         with(binding) {
             ivBack.setOnClickListener(this@SkinListActivity)
+            tvTypeScript.text = typeScript
         }
 
         when (isHideSkins) {
@@ -263,6 +283,11 @@ class SkinListActivity : AppCompatActivity(), OnItemClicked, View.OnClickListene
             showShimmer(mShimmerViewContainer, rvSkins)
         }
         toast(message)
+    }
+
+    private fun showTypeGame() {
+        AppAnalytics.trackDownload(AppAnalytics.Const.INSTALL)
+        DialogChooseMl {}.show(supportFragmentManager, tag(this))
     }
 
 

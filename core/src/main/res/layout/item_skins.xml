@@ -15,22 +15,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/tvTypeScript"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/bg_circle_shadow_v2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/imgBackground"
-            android:textSize="11sp"
-            android:paddingHorizontal="10dp"
-            android:paddingVertical="3dp"
-            android:layout_margin="8dp"
-            android:fontFamily="@font/poppins_semibold"
-            android:elevation="20dp"
-            android:textColor="@android:color/darker_gray"
-            tools:text="FFMax"/>
-
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/imgBackground"
             android:layout_width="match_parent"

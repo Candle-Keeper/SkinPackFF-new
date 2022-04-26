@@ -117,7 +117,7 @@
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.12685185185185185" />
         <entry key="app/src/main/res/layout/activity_setting.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/activity_skin_list.xml" value="0.165" />
+        <entry key="app/src/main/res/layout/activity_skin_list.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_splash.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_web.xml" value="0.4036458333333333" />
         <entry key="app/src/main/res/layout/ad_container_native.xml" value="0.2578125" />
@@ -167,7 +167,7 @@
         <entry key="core/src/main/res/layout/item_category.xml" value="0.4036458333333333" />
         <entry key="core/src/main/res/layout/item_endorse_list.xml" value="0.4036458333333333" />
         <entry key="core/src/main/res/layout/item_hero.xml" value="0.5" />
-        <entry key="core/src/main/res/layout/item_skins.xml" value="0.375" />
+        <entry key="core/src/main/res/layout/item_skins.xml" value="0.25" />
         <entry key="more/src/main/res/layout/fragment_dialog_donate.xml" value="0.1" />
         <entry key="more/src/main/res/layout/fragment_dialog_feedback.xml" value="0.2578125" />
         <entry key="more/src/main/res/layout/fragment_more.xml" value="0.25" />

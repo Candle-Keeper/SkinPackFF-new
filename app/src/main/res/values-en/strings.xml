@@ -77,4 +77,7 @@
     <string name="centang_jika_tidak_ingin_menampilkan_ini_lagi">check if you dont want to show this again</string>
     <string name="skin_hanya_utk">skin only for</string>
     <string name="pilih_skin_yg_lain">select another skin</string>
+    <string name="game_type_ff">For FF</string>
+    <string name="game_type_max">For FF MAX</string>
+    <string name="game_type_double">For FF and FF MAX</string>
 </resources>
