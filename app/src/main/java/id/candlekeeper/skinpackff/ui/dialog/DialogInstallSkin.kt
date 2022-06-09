@@ -218,8 +218,8 @@ class DialogInstallSkin(
 
         if (isAboveAndroid11()) {
             if (result) {
-                val source = docFileOperation(1, activity?.application!!)!!
-                val target = docFileOperation(2, activity?.application!!)!!
+                val source = docFileOperation(1, activity?.application!!, prefManager)!!
+                val target = docFileOperation(2, activity?.application!!, prefManager)!!
                 Log.e("move", "source: ${source.uri} || target: ${target.uri}")
                 ioScope.launch {
                     source.moveFolderTo(

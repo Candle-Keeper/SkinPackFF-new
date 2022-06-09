@@ -17,12 +17,13 @@ fun destinationDownload(context: Context): File {
 }
 
 fun destinationUnzip(context: Context, prefManager: PrefManager): String {
+    //dicoba bikin path sendiri di aplikasi
     val packageSkin = prefManager.spPackageNameFF + "/files/dragon2017/assets/"
 
     return if (isAboveAndroid11()) {
-        context.getExternalFilesDir("")!!.path + "/${packageSkin}"
+        context.getExternalFilesDir("")!!.absolutePath
     } else {
-        Environment.getExternalStorageDirectory().absolutePath + "/Android/data/$packageSkin"
+        Environment.getExternalStorageDirectory().absolutePath + "/Android/data/"
     }
 }
 
@@ -46,12 +47,12 @@ fun uriPermission(operation: Int): Uri? {
     }
 }
 
-fun docFileOperation(operation: Int, application: Application): DocumentFile? {
+fun docFileOperation(operation: Int, application: Application, prefManager: PrefManager): DocumentFile? {
     return when (operation) {
         1 -> {
             DocumentFile.fromTreeUri(
                 application,
-                "content://com.android.externalstorage.documents/tree/primary%3AAndroid%2Fdata/document/primary%3AAndroid%2Fdata%2Fid.candlekeeper.skinpackml%2Ffiles%2Fcom.mobile.legends".toUri()
+                "content://com.android.externalstorage.documents/tree/primary%3AAndroid%2Fdata/document/primary%3AAndroid%2Fdata%2Fid.candlekeeper.skinpackff%2Ffiles%2F${prefManager.spPackageNameFF}".toUri()
             )
         }
         2 -> {

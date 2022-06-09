@@ -5,7 +5,6 @@ import android.content.res.Configuration
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -37,7 +36,6 @@ import id.candlekeeper.skinpackff.R
 import id.candlekeeper.skinpackff.databinding.FragmentHomeBinding
 import id.candlekeeper.skinpackff.ui.detailSkin.DetailSkinActivity
 import id.candlekeeper.skinpackff.ui.dialog.DialogAds
-import id.candlekeeper.skinpackff.ui.dialog.DialogChooseMl
 import id.candlekeeper.skinpackff.ui.dialog.DialogServerError
 import id.candlekeeper.skinpackff.ui.dialog.DialogUpdateApp
 import id.candlekeeper.skinpackff.ui.skinList.SkinListActivity
